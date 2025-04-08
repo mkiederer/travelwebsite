@@ -1,32 +1,92 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script src="testscript.js" defer></script>
 <meta charset="utf-8">
 <LINK REL="STYLESHEET" HREF="MYSTYLE.CSS">
 <title>Just Maxs Life Travel Company</title>
 <style>
-Body  {background-image: url(background.jpg);}
+Body  {background-image: url(background8.png);}
     Body {background-position: center;}
+    img {
+    transition: transform 0.25s ease;
+}
+
+img:hover {
+    transform: scale(2.5);
+}
+
+div.scroll-container {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+div.scroll-container img {
+  padding: 10px;
+}
   </style>
 </head>
 <body>
 <P CLASS="INTRO">
 
 
-<h1><img src="Title.png" alt="JML logo" width= "500" height= "250"><br>Travel Company</h1>
+<h1><img src="JML.png" alt="JML logo" width= "500" height= "250"></h1>
 <center><a href="travel.html">Trips</a>
   <a href="Blog.html">Blog</a>
   <a href="Aboutme.html">About Me</a></center>
+  <center>
+ 
+    
+    <img src="Longpicture.jpg" alt="Picture one" width= "1500" height= "200" ></center>
+  <left><video width= "1000" height="500" controls>
+    <source src="AzulandElian.mp4" type="video/mp4" >
+    <source src="movie.ogg" type="video/ogg" >
+  
+  </video></left> <right> <video width= "1000" height="500" controls>
+  <source src="Water.mp4" type="video/mp4" >
+  <source src="movie.ogg" type="video/ogg" >
+
+</video></right>
 <h1>Greece</h1>
-<p><center><img src="Athens.jpg" alt="Picture one" width= "250" height= "300" ><br>Athens<p>Explore Acient Ruins, Rooftop bars, and so much more.<br> Have some delicious wine paired underneath the moonlight listening to all of Abba's songs featured in Mamma Mia!<br> Have your Mamma Mia moment sing with everyone on the tour group in the bus on our way to explore the ruins, a traditional greek dinner, and going back to the hostel.</center> </p>
-<p><center><img src="Santorini.jpg" alt="Picture one" width= "250" height= "300" ><br>Santorini<p>Explore volcanos, cliff side wine tasting, cliff side views, beautiful views of the islands and water. Get your iconic picture with the traditional greek building in the background with you posing with the great views and structures of Santorini. Don't forget to stop by the Donkey statues. </center></p>
+<p><center> <div class="scroll-container">
+  <img src="Athens.jpg" alt="Picture one" width= "250" height= "300">
+  <img src="Athens2.jpg" alt="Forest"width= "250" height= "300">
+  <img src="Athens3.jpg" alt="Northern Lights"width= "250" height= "300">
+  <img src="Athens4.jpg" alt="Mountains"width= "250" height= "300">
+  <img src="Athens5.jpg" alt="Mountains"width= "250" height= "300">
+</div> <br>Athens<p>Explore Acient Ruins, Rooftop bars, and so much more.<br> Have some delicious wine paired underneath the moonlight listening to all of Abba's songs featured in Mamma Mia!<br> Have your Mamma Mia moment sing with everyone on the tour group in the bus on our way to explore the ruins, a traditional greek dinner, and going back to the hostel.</center> </p>
+<p><center>   <div class="scroll-container">
+  <img src="Santorini.jpg" alt="Picture one" width= "250" height= "300" >
+  <img src="Santorini2.jpg" alt="Forest"width= "250" height= "300">
+  <img src="Santorini3.JPG" alt="Northern Lights"width= "250" height= "300">
+  <img src="Santorini4.jpg" alt="Mountains"width= "250" height= "300">
+  <img src="Santorini5.jpg" alt="Mountains"width= "250" height= "300">
+  <img src="Santorini6.JPG" alt="Picture one" width= "250" height= "300" >
+  <img src="Santorini7.jpg" alt="Forest"width= "250" height= "300">
+  <img src="Santorini8.jpg" alt="Northern Lights"width= "250" height= "300">
+  <img src="Santorini9.jpg" alt="Mountains"width= "250" height= "300">
+</div>
+  <br>Santorini<p>Explore volcanos, cliff side wine tasting, cliff side views, beautiful views of the islands and water. Get your iconic picture with the traditional greek building in the background with you posing with the great views and structures of Santorini. Don't forget to stop by the Donkey statues. </center></p>
 <h1>Germany</h1>
 <p><center><img src="Munich.jpg" alt="Picture five" width= "250" height= "300" ><br>Munich<p> Beer Gardens, Christmas Markets, BMW Museum and so much more! Ride the Ferris Wheel and see a 360 view of Munich. Don't forget to try snitzel and get a warm pretzel from a bakery (dont forget to add some butter to that pretzel) and to finish off your night go clubbing and dance your heart out! Go thrifting during the day and dance the night away. </center></p>
 <h1>Spain</h1>
-<p><center><img src="Barcelona.jpg" alt="Sailboat pic" width= "250" height= "300" ><br>Barcelona<p> Sagrada Familia, Parque de Guel, Rooftop bars, Sailboats, beaches, and so much more. Do you want to have a Cheetahs Girls moment? Then go to Parque de Guel and sit on the benches they SAT on! Then enjoy a nice dinner with some great paella and some yummy sangria! Then go bar hopping at night! Get an amazing taxi that plays techno music. Just know they do not have any bread aka pan at bars for your midnight snack sadly :\ </center></p>
+<p><center><img src="Barcelona.jpg" alt="Sailboat pic" width= "250" height= "300" ><br>Barcelona<p id="firsttest">Sagrada Familia, Parque de Guel, Rooftop bars, Sailboats, beaches, and so much more. Do you want to have a Cheetahs Girls moment? Then go to Parque de Guel and sit on the benches they SAT on! Then enjoy a nice dinner with some great paella and some yummy sangria! Then go bar hopping at night! Get an amazing taxi that plays techno music. Just know they do not have any bread aka pan at bars for your midnight snack sadly :\ </center></p>
+<h1>Portugal</h1>
+<p><center><img src="Lisbon.jpg" alt="Sailboat pic" width= "250" height= "300" ><br>Lisbon<p> </center></p>
+<h1>Italy</h1>
+<p><center><img src="Italy.jpg" alt="Gondala pic" width= "250" height= "300" ><br>Venice<p> Sagrada </center></p>
+<h1>Switzerland</h1>
+<p><center><img src="Switzerland.jpg" alt="Mountain pic" width= "250" height= "300" ><br>Mount Titlis<p> </center></p>
+<h1>France</h1>
+<p><center><img src="Paris.JPG" alt="Eifle Tower pic" width= "400" height= "300" ><br>Paris<p> </center></p>
+<h1>Netherlands</h1>
+<p><center><img src="Amsterdam.JPG" alt="Mountain pic" width= "400" height= "300" ><br>Amsterdam<p> </center></p>
+<h1>United Kingdom</h1>
+<p><center><img src="London.jpg" alt="Buckingham Palace pic" width= "250" height= "300" ><br>London<p> </center></p>
 
 
-
-
+<script src="testscript.js" defer></script>
 </body>
 </html>
