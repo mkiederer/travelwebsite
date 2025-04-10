@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <LINK REL="STYLESHEET" HREF="MYSTYLE.CSS">
+        <style>
+Body  {background-image: url(background8.png);}
+    Body {background-position: center;}
+  </style>
     <title>Travel Group Chats</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
+       
         .chat-container { display: none; border: 1px solid #ccc; padding: 10px; margin-top: 10px; }
         .chat-box { height: 200px; overflow-y: auto; border: 1px solid #ccc; padding: 5px; }
         .chat-input { width: 80%; padding: 5px; }
@@ -15,21 +19,23 @@
 </head>
 <body>
     <h1><img src="JML.png" alt="JML logo" width= "500" height= "250"></h1>
-<center><a href="travel.html">Trips</a>
-  <a href="Blog.html">Blog</a>
-  <a href="Aboutme.html">About Me</a></center>
-  <center>
-    <h1>Travel Group Chats</h1>
+    <center><a href="Contactpage.html">Contact Me</a>
+      <a href="Travelchat.html">Make Friends</a>
+      <a href="Whyyoushouldtravel.html">Why you should travel with me</a>
+      <a href="travel.html">Home</a>
+    </center>
+    <center><h1>Travel Group Chats</h1>
     <button onclick="showChat('London')">London</button>
     <button onclick="showChat('Lisbon')">Lisbon</button>
     <button onclick="showChat('Barcelona')">Barcelona</button>
     <button onclick="showChat('Munich')">Munich</button>
     <button onclick="showChat('Santorini')">Santorini</button>
     <button onclick="showChat('Athens')">Athens</button>
+</center>
     
     <div id="London" class="chat-container">
         <h2>London Chat</h2>
-        <h2><img src="London3.jpg" alt="London" width= "250" height= "300"></h2>
+       <center><h2><img src="London3.jpg" alt="London" width= "250" height= "300"></h2></center>
         <div class="chat-box" id="paris-box"></div>
         <input class="chat-input" id="paris-input" placeholder="Type a message..." onkeypress="sendMessage(event, 'paris')">
     </div>
