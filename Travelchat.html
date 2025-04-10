@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <LINK REL="STYLESHEET" HREF="MYSTYLE.CSS">
+    <title>Travel Group Chats</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .chat-container { display: none; border: 1px solid #ccc; padding: 10px; margin-top: 10px; }
+        .chat-box { height: 200px; overflow-y: auto; border: 1px solid #ccc; padding: 5px; }
+        .chat-input { width: 80%; padding: 5px; }
+    </style>
+</head>
+<body>
+    <h1><img src="JML.png" alt="JML logo" width= "500" height= "250"></h1>
+<center><a href="travel.html">Trips</a>
+  <a href="Blog.html">Blog</a>
+  <a href="Aboutme.html">About Me</a></center>
+  <center>
+    <h1>Travel Group Chats</h1>
+    <button onclick="showChat('London')">London</button>
+    <button onclick="showChat('Lisbon')">Lisbon</button>
+    <button onclick="showChat('Barcelona')">Barcelona</button>
+    <button onclick="showChat('Munich')">Munich</button>
+    <button onclick="showChat('Santorini')">Santorini</button>
+    <button onclick="showChat('Athens')">Athens</button>
+    
+    <div id="London" class="chat-container">
+        <h2>London Chat</h2>
+        <h2><img src="London3.jpg" alt="London" width= "250" height= "300"></h2>
+        <div class="chat-box" id="paris-box"></div>
+        <input class="chat-input" id="paris-input" placeholder="Type a message..." onkeypress="sendMessage(event, 'paris')">
+    </div>
+
+    <div id="Lisbon" class="chat-container">
+        <h2>Lisbon Chat</h2>
+        <h1><img src="Lisbon3.jpg" alt="Lisbon" width= "250" height= "300"></h1>
+        <div class="chat-box" id="tokyo-box"></div>
+        <input class="chat-input" id="tokyo-input" placeholder="Type a message..." onkeypress="sendMessage(event, 'tokyo')">
+    </div>
+
+    <div id="Barcelona" class="chat-container">
+        <h2>Barcelona Chat</h2>
+        <h1><img src="Barcelona5.jpg" alt="Barcelona" width= "250" height= "300"></h1>
+        <div class="chat-box" id="newyork-box"></div>
+        <input class="chat-input" id="newyork-input" placeholder="Type a message..." onkeypress="sendMessage(event, 'newyork')">
+    </div>
+    <div id="Munich" class="chat-container">
+        <h2>Munich Chat</h2>
+        <h1><img src="Munich.jpg" alt="Munich" width= "250" height= "300"></h1>
+        <div class="chat-box" id="newyork-box"></div>
+        <input class="chat-input" id="newyork-input" placeholder="Type a message..." onkeypress="sendMessage(event, 'newyork')">
+    </div>
+    <div id="Santorini" class="chat-container">
+        <h2>Santorini Chat</h2>
+        <h1><img src="Santorini2.jpg" alt="Santorini" width= "250" height= "300"></h1>
+        <div class="chat-box" id="newyork-box"></div>
+        <input class="chat-input" id="newyork-input" placeholder="Type a message..." onkeypress="sendMessage(event, 'newyork')">
+    </div>
+    <div id="Athens" class="chat-container">
+        <h2>Athens Chat</h2>
+        <h1><img src="Athens2.jpg" alt="Athens" width= "250" height= "300"></h1>
+        <div class="chat-box" id="newyork-box"></div>
+        <input class="chat-input" id="newyork-input" placeholder="Type a message..." onkeypress="sendMessage(event, 'newyork')">
+    </div>
+    <script>
+        const socket = io('http://localhost:3000');
+
+        function showChat(city) {
+            document.querySelectorAll('.chat-container').forEach(chat => chat.style.display = 'none');
+            document.getElementById(city).style.display = 'block';
+        }
+
+        function sendMessage(event, city) {
+            if (event.key === 'Enter') {
+                let input = document.getElementById(city + '-input');
+                let message = input.value;
+                if (message.trim() !== '') {
+                    socket.emit('chatMessage', { city, message });
+                    input.value = '';
+                }
+            }
+        }
+
+        socket.on('chatMessage', data => {
+            let chatBox = document.getElementById(data.city + '-box');
+            chatBox.innerHTML += `<p><strong>User:</strong> ${data.message}</p>`;
+            chatBox.scrollTop = chatBox.scrollHeight;
+        });
+        const express = require('express');
+const http = require('http');
+const { Server } = require('socket.io');
+const cors = require('cors');
+
+const app = express();
+const server = http.createServer(app);
+const io = new Server(server, {
+    cors: {
+        origin: "*",
+        methods: ["GET", "POST"]
+    }
+});
+
+app.use(cors());
+
+io.on('connection', (socket) => {
+    console.log('A user connected');
+
+    socket.on('chatMessage', (data) => {
+        io.emit('chatMessage', data); // Broadcast message to all clients
+    });
+
+    socket.on('disconnect', () => {
+        console.log('User disconnected');
+    });
+});
+
+server.listen(3000, () => {
+    console.log('Server is running on http://localhost:3000');
+});
+
+    </script>
+</body>
+</html>
